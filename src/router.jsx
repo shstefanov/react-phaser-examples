@@ -23,8 +23,9 @@ export default createBrowserRouter([
       path:    "game",
       element: (
         <PhaserGame
+          autofit
           type="WEBGL" // "CANVAS", "WEBGL", "HEADLESS" or "AUTO" (default)
-          width={800} height={600}
+          width="100%" height="100%"
           physics={{
             default: 'arcade',
             arcade: { gravity: { y: 10 } }

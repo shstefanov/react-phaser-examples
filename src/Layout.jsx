@@ -14,7 +14,5 @@ export default () => <>
     <Link to="/game/mouse-scene"  > Mouse(scene)  </Link> &nbsp;&nbsp;
     <Link to="/game/sound"        > Sound         </Link> &nbsp;&nbsp;
   </nav>
-  <div>
-    <Outlet />
-  </div>
+  <Outlet />
 </>;
