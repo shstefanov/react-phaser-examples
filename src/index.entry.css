@@ -52,28 +52,18 @@ table {
 
 
 
-html, body, canvas, #root {
+html, body, #root {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
 }
 
-.react-phaser-container {
-	position: relative;
-	margin: 50px 20px;
+
+.main-navigation {
+	position: fixed;
 }
 
-.react-phaser-container > canvas {
-	background-color: black;
-}
-
-.react-phaser-container > div {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	color: black;
-}
 
 
 a, a:visited {

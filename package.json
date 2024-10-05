@@ -3,6 +3,7 @@
     "dependencies": {
         "@orbits/react-phaser": "git+https://github.com/shstefanov/react-phaser.git#main",
         "combine-section-reducers": "^1.0.6",
+        "npm-run-all": "^4.1.5",
         "phaser": "^3.85.2",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
@@ -21,13 +22,10 @@
     "main": "index.js",
     "name": "react-helloworld",
     "scripts": {
-        "build": "esbuild --preserve-symlinks $(find ./src -name *.entry.*) $(find ./src -name *.html) $(npm run esbuild-loaders | tail -n 1) --minify --bundle --outdir=./public",
-        "esbuild-loaders": "export L=--loader:; export D=dataurl; echo $L.svg=$D $L.png=$D $L.jpg=$D $L.cur=$D $L.ani=$D $L.ttf=$D $L.html=copy",
-        "links": "npm link $(cat links.txt)",
-        "prestart": "npm run show-entries",
+        "build": "esbuild --preserve-symlinks ./src/index.entry.css ./src/index.entry.js ./src/index.html --loader:.svg=dataurl --loader:.png=dataurl --loader:.jpg=dataurl --loader:.cur=dataurl --loader:.ani=dataurl --loader:.ttf=dataurl --loader:.html=copy --minify --bundle --outdir=./public",
+        "build:dev": "esbuild --preserve-symlinks ./src/index.entry.css ./src/index.entry.jsx ./src/index.html --loader:.svg=dataurl --loader:.png=dataurl --loader:.jpg=dataurl --loader:.cur=dataurl --loader:.ani=dataurl --loader:.ttf=dataurl --loader:.html=copy --watch  --bundle --sourcemap --outdir=./public",
         "servor": "servor ./public index.html 3100",
-        "show-entries": "echo Entrypoints: && find ./src -name *.entry.*",
-        "start": "esbuild --preserve-symlinks $(find ./src -name *.entry.*) $(find ./src -name *.html) $(npm run esbuild-loaders | tail -n 1) --watch  --bundle --sourcemap --outdir=./public | npm run servor",
+        "start": "npm-run-all --parallel servor build:dev",
         "test": "mocha -b -p --recursive --bail --extension spec.js -- "
     },
     "version": "1.0.0"
