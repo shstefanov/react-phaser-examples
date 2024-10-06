@@ -13,6 +13,7 @@ export default () => <>
     <Link to="/game/mouse-object" > Mouse(object) </Link> &nbsp;&nbsp;
     <Link to="/game/mouse-scene"  > Mouse(scene)  </Link> &nbsp;&nbsp;
     <Link to="/game/sound"        > Sound         </Link> &nbsp;&nbsp;
+    <Link to="/game/camera"       > Camera        </Link> &nbsp;&nbsp;
   </nav>
   <Outlet />
 </>;

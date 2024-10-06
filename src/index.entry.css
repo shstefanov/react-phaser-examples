@@ -70,7 +70,7 @@ html, body, #root {
 	overflow: hidden;
 }
 
-.react-phaser-container > canvas + * {
+.react-phaser-container > canvas ~ * {
 	position: fixed;
 }
 

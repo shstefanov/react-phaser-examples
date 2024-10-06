@@ -13,6 +13,7 @@ import SpriteScene      from "scenes/SpriteScene.component";
 import MouseObjectScene from "scenes/MouseObjectScene.component";
 import MouseSceneScene  from "scenes/MouseSceneScene.component";
 import SoundScene       from "scenes/SoundScene.component";
+import CameraScene      from "scenes/CameraScene.component";
 
 export default createBrowserRouter([
   // <Outlet /> means 'children' inside any parent of children components
@@ -43,6 +44,7 @@ export default createBrowserRouter([
         { path: "mouse-object", element: <MouseObjectScene /> },
         { path: "mouse-scene",  element: <MouseSceneScene  /> },
         { path: "sound",        element: <SoundScene       /> },
+        { path: "camera",       element: <CameraScene      /> },
 
       ]
     },
