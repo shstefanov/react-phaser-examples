@@ -11,11 +11,15 @@ export default () => <PhaserScene
         jumper:     "/images/IconGreen.png",
     }}
 >
-    <PhaserObject create={
-        scene => scene.add.image(400, 300, 'background')
-    }/>
+    <PhaserObject
+        id="background"
+        create={ scene => scene.add.image(400, 300, 'background') }
+    />
 
     <PhaserObject
+
+        id="image"
+
         images={{
             jumper:     "/images/IconGreen.png",
         }}

@@ -10,8 +10,9 @@ export default () => <PhaserScene
         background: "/images/battleback1.png",
     }}
 >
-    <PhaserObject create={
-        scene => scene.add.image(400, 300, 'background')
-    }/>
+    <PhaserObject
+        id="background"
+        create={ scene => scene.add.image(400, 300, 'background') }
+    />
     <p>Empty Scene</p>
 </PhaserScene>

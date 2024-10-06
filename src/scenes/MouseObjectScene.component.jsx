@@ -27,11 +27,14 @@ export default () => {
         }}
 
     >
-        <PhaserObject create={
-            scene => scene.add.image(400, 300, 'background')
-        }/>
+        <PhaserObject
+            id="background"
+            create={ scene => scene.add.image(400, 300, 'background') }
+        />
 
         <PhaserObject
+
+            id="ninja"
 
             interactive draggable
 
@@ -86,14 +89,7 @@ export default () => {
                 if( object.keys.right.isDown) { object.anims.play('ninja_m.walk_east',  true); object.setVelocityX( 100); }
             }}
 
-
-
         />
-
-
-
-
-
 
         <p>Mouse Events</p>
         { selected && <p>Selected</p> }

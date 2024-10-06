@@ -12,11 +12,15 @@ export default () => <PhaserScene
         
     }}
 >
-    <PhaserObject create={
-        scene => scene.add.image(400, 300, 'background')
-    }/>
+    <PhaserObject
+        id="background"
+        create={ scene => scene.add.image(400, 300, 'background') }
+    />
 
     <PhaserObject
+
+        id="image"
+
         images={{  // Laziloaded images
             drops: "/images/rain_drop_0.png",
         }}

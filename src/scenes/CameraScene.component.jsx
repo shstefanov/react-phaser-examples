@@ -79,9 +79,12 @@ export default () => {
         }}
 
     >
-        <PhaserObject create={
-            scene => scene.add.image(400, 300, 'background')
-        }/>
+        <PhaserObject
+            id="background"
+            create={
+                scene => scene.add.image(400, 300, 'background')
+            }
+        />
 
 
         <PhaserCamera
@@ -133,10 +136,11 @@ export default () => {
 
         <PhaserObject
 
+            id="ninja"
+
             create={ scene => {
 
                 const object = scene.physics.add.sprite(400, 100, 'ninja_m');
-                object.setName("ninja");
                 object.setVelocity(10, 100);
                 object.setBounce(1, 1);
                 object.setCollideWorldBounds(true);

@@ -54,11 +54,14 @@ export default () => {
             onWheel              = { (event, object) => { console.log("onWheel",              { event } ); } }
 
     >
-        <PhaserObject create={
-            scene => scene.add.image(400, 300, 'background')
-        }/>
+        <PhaserObject
+            id="background"
+            create={ scene => scene.add.image(400, 300, 'background') }
+        />
 
         <PhaserObject
+
+            id="ninja"
 
             interactive={true}
             draggable={true}

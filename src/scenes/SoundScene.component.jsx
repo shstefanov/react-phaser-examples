@@ -30,11 +30,14 @@ export default () => {
         }}
 
     >
-        <PhaserObject create={
-            scene => scene.add.image(400, 300, 'background')
-        }/>
+        <PhaserObject
+            id="background"
+            create={ scene => scene.add.image(400, 300, 'background') }
+        />
 
         <PhaserObject
+
+            id="ninja"
 
             interactive draggable
 
