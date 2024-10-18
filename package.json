@@ -1,10 +1,10 @@
 {
     "author": "",
     "dependencies": {
-        "@orbits/react-phaser": "git+https://github.com/shstefanov/react-phaser.git#main",
+        "@orbits/react-phaser": "git+https://github.com/shstefanov/react-phaser.git#development",
         "combine-section-reducers": "^1.0.6",
         "npm-run-all": "^4.1.5",
-        "phaser": "^3.85.2",
+        "phaser": "^3.86.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-redux": "^9.1.2",
