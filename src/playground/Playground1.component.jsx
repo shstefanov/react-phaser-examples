@@ -59,6 +59,11 @@ export default () => {
     const [ zoom,         setZoom         ] = useState(1);
 
 
+
+    const screenWidth  = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+
     return <PhaserScene
 
         id="playground-1-scene"
@@ -82,8 +87,6 @@ export default () => {
         onPointerMove = { (event) => {
             const { x, y } = event.position;
 
-            // setOriginX( ( (x / window.innerWidth) ) );
-            // setOriginY( ( (y / window.innerHeight) ) );
 
             if(!dragging) return;
 
@@ -94,10 +97,8 @@ export default () => {
             };
 
 
-            const scrollX = minmax(scrollAnchor.x + vector.x, MIN_SCROLL_X, MAX_SCROLL_X);
-            const scrollY = minmax(scrollAnchor.y + vector.y, MIN_SCROLL_Y, MAX_SCROLL_Y);
-
-            // console.log("SCROLL: ", scrollX, scrollY, vector, scrollAnchor);
+            const scrollX = minmax(scrollAnchor.x + vector.x, (MIN_SCROLL_X), (MAX_SCROLL_X));
+            const scrollY = minmax(scrollAnchor.y + vector.y, (MIN_SCROLL_Y), (MAX_SCROLL_Y));
 
             setScrollX( scrollX );
             setScrollY( scrollY );
@@ -111,10 +112,58 @@ export default () => {
             const direction = (event.deltaY > 0 ? 0.9 : 1.1);
             // 1 / 1.1
             const newZoom = minmax(zoom * direction, MIN_ZOOM, MAX_ZOOM);
+            setZoom( newZoom );
             // const newZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, zoom * direction));
 
 
-            // const { x, y } = event.position;
+            let { x, y } = event.position;
+
+            // Normally, scroll goest at:
+            // const normalWector
+
+            // x = scrollX + x; y = scrollY + y; // Allign mouse to scroll position
+
+
+
+            // // const ratio = zoom / newZoom;
+
+            // // const absMouse = { x: scrollX + x,
+            // // }
+
+
+            // const ratio      = zoom / newZoom;
+            // const scrollDiff = { x: (x - scrollX) * ratio, y: (y - scrollY) * ratio };
+            // // const newScrollDiff = { x: oldScrollDiff.x / newZoom, y: oldScrollDiff.y / newZoom };
+
+
+
+            // // const scrollDiff = {
+            // //     x: oldScrollDiff.x - newScrollDiff.x,
+            // //     y: oldScrollDiff.y - newScrollDiff.y,
+            // // };
+
+            // console.log(ratio, x + scrollDiff.x, y + scrollDiff.y);
+
+
+
+            // console.log("setScrollX",  x - ( scrollX - scrollDiff.x ) / newZoom );
+            // console.log("setScrollY",  y - ( scrollY - scrollDiff.y ) / newZoom );
+
+
+
+
+            // setScrollX( x - scrollDiff.x );
+            // setScrollY( y - scrollDiff.y );
+            // console.log(x - newScrollDiff.x, y - newScrollDiff.y );
+
+
+
+
+
+
+            // setOriginX( x / window.innerWidth );
+            // setOriginY( y / window.innerHeight );
+
 
             // setOriginX( ((x / zoom) / (1600) )  );
             // setOriginY( ((y / zoom) / (1600) )  );
@@ -139,7 +188,7 @@ export default () => {
 
             // setZoom( zoom + diff );
 
-            setZoom( newZoom );
+
 
         }}
 
