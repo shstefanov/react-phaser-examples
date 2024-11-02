@@ -16,7 +16,10 @@ import SoundScene            from "scenes/SoundScene.component";
 import CameraScene           from "scenes/CameraScene.component";
 import ObjectAttributesScene from "scenes/ObjectAttributesScene.component";
 import TilemapScene          from "scenes/TilemapScene.component";
+import NestedObjectsScene    from "scenes/NestedObjectsScene.component";
 
+
+import Playground1           from "playground/Playground1.component";
 
 
 export default createBrowserRouter([
@@ -41,16 +44,20 @@ export default createBrowserRouter([
       ),
 
       children: [
-        { path: "",             element: <EmptyScene            /> },
-        { path: "image",        element: <ImageScene            /> },
-        { path: "particles",    element: <ParticlesScene        /> },
-        { path: "sprite",       element: <SpriteScene           /> },
-        { path: "mouse-object", element: <MouseObjectScene      /> },
-        { path: "mouse-scene",  element: <MouseSceneScene       /> },
-        { path: "sound",        element: <SoundScene            /> },
-        { path: "camera",       element: <CameraScene           /> },
-        { path: "object-attrs", element: <ObjectAttributesScene /> },
-        { path: "tilemap",      element: <TilemapScene          /> },
+        { path: "",               element: <EmptyScene            /> },
+        { path: "image",          element: <ImageScene            /> },
+        { path: "particles",      element: <ParticlesScene        /> },
+        { path: "sprite",         element: <SpriteScene           /> },
+        { path: "mouse-object",   element: <MouseObjectScene      /> },
+        { path: "mouse-scene",    element: <MouseSceneScene       /> },
+        { path: "sound",          element: <SoundScene            /> },
+        { path: "camera",         element: <CameraScene           /> },
+        { path: "object-attrs",   element: <ObjectAttributesScene /> },
+        { path: "tilemap",        element: <TilemapScene          /> },
+        { path: "nested-objects", element: <NestedObjectsScene    /> },
+
+
+        { path: "playground-1",   element: <Playground1           /> },
 
       ]
     },
